@@ -1,4 +1,4 @@
-SMILES,Solvent,Ex (nm)
+smiles,solvent,ex (nm)
 c1ccc(-c2ccnc3ncnn23)cc1,C(Cl)Cl,310.0
 O=c1c2cc(Cl)ccc2sc2cc(-c3ccc(Cl)cc3Cl)cc(NN3CCOCC3)c12,CO,
 F[B-]1(F)n2c(ccc2N2CCOCC2)C(c2ccccc2)=C2C=CC(N3CCOCC3)=[N+]21,C(Cl)Cl,572.0

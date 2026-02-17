@@ -1,4 +1,4 @@
-SMILES,Solvent,Ex (nm)
+smiles,solvent,ex (nm)
 Cc1c(/N=N/c2ccc([N+](=O)[O-])cc2)c(O)[nH]c(=O)c1C(N)=O,CCO,423.0
 CC(C)(C)NC(=O)c1cccc2ccc3c4cc(F)ccc4c4ccc(F)cc4c3c12,C(Cl)Cl,334.0
 CC(C)(C)c1cc(C2=C3C=CC(=N3)C=c3ccc4n3[Ni+2]n3c(ccc32)C=C2C=CC(=N2)C=4c2cc(C(C)(C)C)cc(C(C)(C)C)c2)cc(C(C)(C)C)c1,C(Cl)Cl,

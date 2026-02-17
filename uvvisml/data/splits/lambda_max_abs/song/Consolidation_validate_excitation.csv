@@ -1,4 +1,4 @@
-SMILES,Solvent,Ex (nm)
+smiles,solvent,ex (nm)
 COc1cc(/C=C/C(=O)CC(=O)/C=C/c2ccc(O)c(OC)c2)ccc1O,CS(=O)C,429.0
 COc1cc(OC)cc(-c2ccc(-c3ccc(CN)s3)s2)c1,CCO,365.0
 Cc1cc(Br)c(O)c(Cc2cc3ccccc3oc2=O)c1,CCO,
