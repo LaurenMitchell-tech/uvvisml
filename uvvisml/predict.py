@@ -94,15 +94,15 @@ def write_script(args, header, model_checkpoint_dir):
     if args.method == 'chemprop_tddft':
         module_dir = os.path.dirname(os.path.abspath(__file__))
         tddft_model_dir = os.path.join(module_dir, "models/lambda_max_abs_wb97xd3/chemprop/all_wb97xd3/production/fold_0/")
-        tddft_predict_command = f"""chemprop_predict --test_path {args.test_file} --checkpoint_dir {tddft_model_dir} \
---preds_path test_tddft_preds.csv
+        tddft_predict_command = f"""chemprop_predict --test-path {args.test_file} --checkpoint {tddft_model_dir} \
+--preds-path test_tddft_preds.csv
 
 python {module_dir}/models/tddft_to_features_file.py
 
 """
 
-    predict_command = f"""chemprop_predict --test_path {args.test_file} \
---checkpoint_dir {model_checkpoint_dir} --preds_path {args.preds_file}"""
+    predict_command = f"""chemprop_predict --test-path {args.test_file} \
+--checkpoint_dir {model_checkpoint_dir} --preds-path {args.preds_file}"""   #--checkpoint_path is in training args as --checkpoint
 
     if args.property in ['absorption_peak_nm_expt']: # if predicting experimental property (not in vacuum)
         predict_command += ' --number_of_molecules 2'
@@ -166,7 +166,7 @@ def get_parser():
 def main(args):
     numeric_level = getattr(logging, args.log_level.upper(), None)
     if not isinstance(numeric_level, int):
-        raise ValueError('Invalid log level: %s' % loglevel)
+        raise ValueError('Invalid log level: %s' % loglevel)      #What's wronge here?
     logging.basicConfig(level=numeric_level)
 
     logging.info('Choosing header for script...')

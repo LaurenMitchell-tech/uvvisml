@@ -54,7 +54,8 @@ xlsx_files = [x for x in os.listdir(data_location) if x.endswith('.xlsx')]
 dsscdb_df = pd.DataFrame()
 for file in xlsx_files:
     file_location = os.path.join(data_location, file)
-    dsscdb_df = dsscdb_df.append(pd.read_excel(file_location), ignore_index=True, sort=True)
+    dsscdb_df = pd.concat([dsscdb_df, pd.read_excel(file_location)], ignore_index=True, sort=True)
+    # replaced: dsscdb_df = dsscdb_df.append(pd.read_excel(file_location), ignore_index=True, sort=True)
 
 dsscdb_df.rename(columns={'SMILES':'smiles','SOLVENT':'solvent','ABSORPTION_MAXIMA':'peakwavs_max'}, inplace=True)
 dsscdb_df = dsscdb_df[['smiles','solvent','peakwavs_max']].copy()
@@ -268,7 +269,7 @@ df
 # In[14]:
 
 
-cluster_idx = df[df['smiles'].str.contains('\.')].index
+cluster_idx = df[df['smiles'].str.contains(r'\.')].index
 #print('Removing {} rows'.format(len(cluster_idx)))
 df.drop(index=cluster_idx, inplace=True)
 df
@@ -279,7 +280,7 @@ df
 # In[15]:
 
 
-df[['smiles','solvent','peakwavs_max','source']].to_csv(f'{data_processed_dir}/all_lambda_max_abs_including_duplicates.csv', 
+df[['smiles','solvent','peakwavs_max','source']].to_csv(f'{data_processed_dir}/all_lambda_max_abs_including_duplicates(1).csv', 
                                                         index=False)
 
 
